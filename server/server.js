@@ -34,7 +34,7 @@ if (isDeveloping) {
   });
 } 
 ///////////////////
-/*PRODUCTIOn*/
+/*PRODUCTION*/
 ///////////////
 else {
   app.use(express.static(__dirname + '../dist'));
