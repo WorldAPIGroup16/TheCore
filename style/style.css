@@ -1,0 +1,27 @@
+.app {
+  text-align: center;
+}
+
+.inputQuizTitle {
+  text-align: center;
+}
+
+.inputQuizAnswer {
+  text-align: center;
+}
+
+.qnum {
+  font-weight: bold;
+}
+
+.textAnswer {
+  margin-top: 10px;
+}
+
+.answerChoices table {
+  margin: auto;
+}
+
+.answerChoices table td {
+  text-align: left;
+}
