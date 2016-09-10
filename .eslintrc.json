@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jasmine": true,
+    "node": true
+  },
+  "globals": {
+    "angular": true,
+    "inject": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "((^|, )(google|app|))+$"
+      }
+    ]
+  }
+}
