@@ -6,6 +6,7 @@ module.exports = {
   },
 
   getUser: function(req, res){
+    console.log('got request for');
     res.send(`got get request for user/${req.params.username}`);
   }
 
