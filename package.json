@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/komali2/TheCore/issues"
   },
-  "homepage": "https://github.com/komali2/TheCore#readme"
+  "homepage": "https://github.com/komali2/TheCore#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0"
+  }
 }
