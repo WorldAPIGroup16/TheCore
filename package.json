@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot"
+    "start": "webpack-dev-server --progress --inline --hot",
+    "production": "webpack --progress -p",
+     "build": "NODE_ENV=production node node_modules/.bin/webpack && cp index.html dist/index.html"
   },
   "author": "",
   "license": "ISC",
