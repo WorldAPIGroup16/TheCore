@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot"
+    "start": "npm install && webpack-dev-server --progress --inline --hot"
   },
   "author": "",
   "license": "ISC",
