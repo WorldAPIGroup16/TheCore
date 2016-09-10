@@ -1,27 +1,24 @@
-.app {
-  text-align: center;
+.test {
+  /*  border: 1px solid black;*/
 }
-
-.inputQuizTitle {
-  text-align: center;
+.row {
+  margin-bottom: 50px;
 }
-
-.inputQuizAnswer {
-  text-align: center;
+.user-name { 
+  font-size: 3em;
+  text-align: center; 
 }
-
-.qnum {
-  font-weight: bold;
+.profile-img {
+  height: 300px;
 }
-
-.textAnswer {
-  margin-top: 10px;
+.core-score{
+  float: right !important;
+  margin-right: 10%;
 }
-
-.answerChoices table {
-  margin: auto;
+.core-score h1 {
+  font-size: 20em;
 }
-
-.answerChoices table td {
-  text-align: left;
+.traitify-container {
+  height: 500px;
+  overflow: hidden;
 }
