@@ -1,5 +1,5 @@
 var path = require('path');
-
+var userController = require('./userController');
 
 module.exports = function(app, express) {
   
