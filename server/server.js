@@ -49,3 +49,5 @@ app.listen(port, '0.0.0.0', function onStart(err) {
   }
   console.info('==> 🌎 Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
 });
+
+require('./routing.js')(app, express);
