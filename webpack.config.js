@@ -21,7 +21,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: './dist',
     stats: {
       chunks: false
     }

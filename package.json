@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm install && webpack-dev-server --progress --inline --hot",
     "production": "webpack --progress -p",
-     "build": "NODE_ENV=production node node_modules/.bin/webpack && cp index.html dist/index.html"
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp index.html dist/index.html"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +32,8 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "request": "^2.74.0",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }
