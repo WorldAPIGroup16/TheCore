@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "TheCore",
   "main": "index.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re1nv3nt/TheCore.git",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot"
   },
@@ -16,7 +20,8 @@
     "babel-preset-react": "^6.1.18",
     "babel-preset-react-hmre": "^1.1.1",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.15.1"
+    "webpack-dev-server": "^1.15.1",
+    "eslint": "^3.5.0"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
