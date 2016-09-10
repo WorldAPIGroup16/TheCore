@@ -9,9 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "npm install && webpack-dev-server --progress --inline --hot",
-    "production": "webpack --progress -p",
-     "build": "NODE_ENV=production node node_modules/.bin/webpack && cp index.html dist/index.html"
+    "dev": "npm install && webpack --progress -p && webpack-dev-server --progress --inline --hot",
+    "server": "nodemon server/server.js",
+    "start": "webpack --progress -p && node server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +34,8 @@
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
-    "traitify": "^2.2.0"
+    "traitify": "^2.2.0",
+    "request": "^2.74.0",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }
