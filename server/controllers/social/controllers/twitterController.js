@@ -1,15 +1,17 @@
-var haven = require('./../util/havenController.js');
+var haven = require('./../../util/havenController.js');
+var Twitter = require('twitter');
+var keys = require('./../../../../keyStore.js');
 // var db = require('')
 var api = {};
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
     getTwitterPosts().then((tweets) => {
-      haven.analyzeSentiment(tweets).then((sentiment)=>{
-        resolve(sentiment);
+      haven.analyseSentiment(tweets).then((sentiment)=>{
+        resolve(sentiment.aggregate.score);
         // db.set(sentiment);
-      })
-    })
+      });
+    });
   });
 };
 
