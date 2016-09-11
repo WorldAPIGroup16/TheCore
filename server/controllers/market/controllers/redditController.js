@@ -1,4 +1,6 @@
 var api = {};
+var db = require('./../../util/dbController.js');
+var request = require('request');
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
@@ -19,7 +21,7 @@ api.getScore = function(user){
 };
 
 //private function
-function getEbayScore(username){
+function getRedditScore(username){
   return new Promise((resolve, reject)=>{
     //get the ebay score  and
     //resolve(score);
