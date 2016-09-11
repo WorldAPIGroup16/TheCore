@@ -27,7 +27,7 @@ function getRedditKarma(username){
       method: 'GET'
     };
     request(options, (err, response, body)=>{
-      resolve(body.data.link_karma);
+      resolve(JSON.parse(body).data.link_karma);
     });
   });
 }
@@ -39,7 +39,7 @@ function getRedditNumPosts(username){
       method: 'GET'
     };
     request(options, (err, response, body) => {
-      resolve(body.data.children.length);
+      resolve(JSON.parse(body).data.children.length);
     });
   });
 }
