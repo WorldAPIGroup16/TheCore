@@ -61,7 +61,7 @@ api.getLogin = function(username, field){
 
 api.setScore = function(username, field, score){
   var branch;
-  if (field == 'facebook' || field == 'reddit' || field == 'twitter'){
+  if (field == 'facebook' || field == 'twitter'){
     branch = 'social';
   }
   else {
