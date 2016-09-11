@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^0.14.0",
     "babel-preset-stage-1": "^6.1.18",
+    "bluebird": "^3.4.6",
     "express": "^4.14.0",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
@@ -37,6 +38,7 @@
     "redux": "^3.0.4",
     "request": "^2.74.0",
     "traitify": "^2.2.0",
+    "twitter": "^1.4.0",
     "webpack-hot-middleware": "^2.12.2"
   }
 }
