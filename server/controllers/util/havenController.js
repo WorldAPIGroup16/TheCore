@@ -3,7 +3,7 @@ var key = require('../../../keyStore.js').haven.key;
 
 var api = {};
 
-api.analyseSentiment = function(str, cb){
+api.analyseSentiment = function(str){
   return new Promise((resolve, reject)=>{
     var options = {
       method: 'GET',
