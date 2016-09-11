@@ -5,3 +5,7 @@ dist/bundle.js
 
 # Access Tokens/Secrets
 keyStore.js
+
+# Debuggers
+.vscode
+index.js
