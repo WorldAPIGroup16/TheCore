@@ -1,13 +1,11 @@
 var api = {};
+var twitter = require('./controllers/twitterController.js');
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-    //actually it'll probably be db.getLogin.then(loginname).then that stuff below
-    // facebook.getScore.then((score)=>{
-    //   //
-    // });
-    //chain off facebook  and twitter and then 
-    //resolve(finalScore);
+   twitter.getScore.then((score)=>{
+     resolve(score);
+   });
   });
 };
 

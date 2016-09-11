@@ -77,11 +77,12 @@ api.setScore = function(username, field, score){
 };
 
 api.getScore = function(username, field){
+  var branch;
   if (field == 'facebook' || field == 'twitter') {
-    let branch = 'social';
+    branch = 'social';
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   return new Promise((resolve, reject)=>{
     //for the given user
