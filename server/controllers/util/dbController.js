@@ -74,7 +74,7 @@ api.setScore = function(username, field, score){
 };
 
 api.getScore = function(username, field){
-  if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
+  if (field == 'facebook' || field == 'twitter') {
     let branch = 'social';
   }
   else {
