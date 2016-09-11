@@ -1,4 +1,5 @@
 var request = require('request');
+var score = require('./scoreHelpers.js');
 
 module.exports = {
   register: function(req, res){
@@ -11,9 +12,10 @@ module.exports = {
   },
 
   getScore: function(req, res){
+    console.log('hello, this is the getScore method :)');
+    score.getFacebookPosts('', res);
 
-
-    res.send('got get request for users score');
+    //res.send('got get request for users score');
   }
 
 };
