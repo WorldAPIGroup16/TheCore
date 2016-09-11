@@ -22,12 +22,6 @@ api.updateScore = function(user){
       //db.getSocialScore.then
       //resolve(gottenScore);
     });
-
-  api.doTraitify = function(userId){
-    traitify.getSlides(assessmentId, function(assessment){
-    //     // Use assessment here.
-    //     console.log(assessment);
-    });
   }
 };
 
