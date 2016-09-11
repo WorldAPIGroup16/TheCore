@@ -13,7 +13,7 @@ export default class Home extends Component {
           <Jumbotron />
           <div className="section section-1">
             <div className='row'>
-              <div className="content col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-7">
+              <div className="content col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-1">
                 <div className="section1-content">
                   <h3>The core score is a measure of your online accountability</h3>
                   <div className="intro-icons">
@@ -27,8 +27,10 @@ export default class Home extends Component {
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
+
           <div className="section section-2">
             <div className='row'>
               <div className="content col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-1">
@@ -44,9 +46,11 @@ export default class Home extends Component {
                     </ul>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
+
           <div className="section section-1">
             <div className='row'>
               <div className="content col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-7">
