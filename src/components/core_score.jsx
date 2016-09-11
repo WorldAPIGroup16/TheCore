@@ -4,7 +4,7 @@ export default class CoreScore extends Component {
 
   render() {
     return (
-      <div className="core-score col-sm-4 test">
+      <div className="core-score col-sm-4">
         <h1>88</h1>
       </div>
     );
