@@ -21,7 +21,7 @@ api.getUserTraitify = function(username){
       }
       reject('Invalid snapshot');
     });
-  })
+  });
 };
 
 api.getUser = function(username){
@@ -38,11 +38,12 @@ api.getUser = function(username){
 };
 
 api.getLogin = function(username, field){
-  if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+  var branch;
+  if (field == 'facebook' || field == 'twitter') {
+    branch = 'social';
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   //get the "login name" for whatever field, ie user.market.ebay.name or user.social.facebook.name
   //resolve over that name string
@@ -50,19 +51,21 @@ api.getLogin = function(username, field){
     database.ref('/Users/' + username + '/' + branch + '/' + field + '/name').once('value').then((snapshot)=>{
       if (snapshot) {
         resolve(snapshot.val());
-        return;
       }
-      reject('Invalid snapshot');
-    })
+      else {
+        reject('Invalid snapshot');
+      }
+    });
   });
 };
 
 api.setScore = function(username, field, score){
-   if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+  var branch;
+  if (field == 'facebook' || field == 'twitter'){
+    branch = 'social';
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   return new Promise((resolve, reject)=>{
     //for the given user
@@ -74,11 +77,12 @@ api.setScore = function(username, field, score){
 };
 
 api.getScore = function(username, field){
-  if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+  var branch;
+  if (field == 'facebook' || field == 'twitter') {
+    branch = 'social';
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   return new Promise((resolve, reject)=>{
     //for the given user

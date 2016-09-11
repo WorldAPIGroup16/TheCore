@@ -14,8 +14,9 @@ api.updateScore = function(user){
 
 api.getScore = function(user){
   return new Promise((resolve, reject)=>{
-    //db.getScore.then
-    //resolve(gottenScore);
+    db.getScore(user, 'reddit').then((score)=>{
+      resolve(score);
+    });
   });
 };
 
