@@ -4,12 +4,11 @@ var request = require('request');
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-    // private function getEbayScore.then((score)=>{
-    //  
-          //db.set(score);
-          //resolve(score) for good measure
-    // 
-    // });
+    getRedditKarma(user).then((karma)=>{
+      getRedditNumPosts(user).then((numPosts)=>{
+        resolve(karma / numPosts);
+      });
+    });
   });
 };
 
@@ -40,7 +39,7 @@ function getRedditNumPosts(username){
       method: 'GET'
     };
     request(options, (err, response, body) => {
-      resolve(body.data.link_karma);
+      resolve(body.data.children.length);
     });
   });
 }
