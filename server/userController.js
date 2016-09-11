@@ -13,7 +13,7 @@ module.exports = {
 
   getScore: function(req, res){
     console.log('hello, this is the getScore method :)');
-    score.getFacebookPosts('', res);
+    score.getAPIData('', res);
 
     //res.send('got get request for users score');
   }

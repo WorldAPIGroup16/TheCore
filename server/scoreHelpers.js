@@ -6,48 +6,68 @@ var FB =  require('fb'), fb = new FB.Facebook({appId: api.facebook.key, appSecre
 /* Helper Requests go here */
 module.exports = {
 
-  getFacebookPosts: function(user, res){
-    console.log('Inside getFacebookPosts');
+  getAPIData: function(user, res){
+    console.log('Inside getAPIData');
 
-    graph.setAccessToken(api.facebook.key);
-    graph.setAppSecret(api.facebook.secret);
+    var host = 'http://open.api.ebay.com/shopping?';
+    var userID = '';
 
-    // get authorization url 
-    var authUrl = graph.getOauthUrl({
-        "client_id":     api.facebook.key
-      , "redirect_uri":  api.facebook.redirect_uri
-    });
- 
-    // shows dialog 
-    res.redirect(authUrl);
- 
-    // after user click, auth `code` will be set 
-    // we'll send that and get the access token 
-    graph.authorize({
-        "client_id":      api.facebook.key
-      , "redirect_uri":   api.facebook.redirect_uri
-      , "client_secret":  api.facebook.secret
-      // , "code":           req.query.code
-    }, function (err, facebookRes) {
-      // res.redirect('/loggedIn');
+    request(host + 'callname=GetUserProfile&responseencoding=json&appid=' + api.ebay.appID + '&siteid=0&version=967&UserID=' + userID, function(error, response, body){
+      if(error){
+        console.log('Error: ', error);
+      }
+      console.log('Reponse! ', body);
 
+      res.send('End Response');
     });
 
-    var options = {
-        timeout:  3000
-      , pool:     { maxSockets:  Infinity }
-      , headers:  { connection:  "keep-alive" }
-    };
+   //  http://open.api.ebay.com/shopping?
+   // callname=GetUserProfile&
+   // responseencoding=XML&
+   // appid=YourAppIDHere&
+   // siteid=0&
+   // version=967&
+   // UserID=hypothetical-user
+
+    // graph.setAccessToken(api.facebook.key);
+    // graph.setAppSecret(api.facebook.secret);
+
+    // // get authorization url 
+    // var authUrl = graph.getOauthUrl({
+    //     "client_id":     api.facebook.key
+    //   , "redirect_uri":  api.facebook.redirect_uri
+    // });
+ 
+    // // shows dialog 
+    // res.redirect(authUrl);
+ 
+    // // after user click, auth `code` will be set 
+    // // we'll send that and get the access token 
+    // graph.authorize({
+    //     "client_id":      api.facebook.key
+    //   , "redirect_uri":   api.facebook.redirect_uri
+    //   , "client_secret":  api.facebook.secret
+    //   // , "code":           req.query.code
+    // }, function (err, facebookRes) {
+    //   // res.redirect('/loggedIn');
+
+    // });
+
+    // var options = {
+    //     timeout:  3000
+    //   , pool:     { maxSockets:  Infinity }
+    //   , headers:  { connection:  "keep-alive" }
+    // };
      
-    graph
-      .setOptions(options)
-      .get("zuck", function(err, res) {
-        console.log('Data Payload! ', res); // { id: '4', name: 'Mark Zuckerberg'... } 
+    // graph
+    //   .setOptions(options)
+    //   .get("zuck", function(err, res) {
+    //     console.log('Data Payload! ', res); // { id: '4', name: 'Mark Zuckerberg'... } 
 
-        // res.send('End Response');
-    });
+    //     // res.send('End Response');
+    // });
 
-    res.send('End Response');
+    //res.send('End Response');
 
     // request('https://graph.facebook.com/zuck?access_token=184780581946920', function(error, response, body){
     //   if(error){
