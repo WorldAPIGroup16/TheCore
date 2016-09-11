@@ -4,7 +4,7 @@ export default class Header extends Component {
 
   render() {
     return (
-          <header className="site-header">
+          <header className="site-header nav">
             <nav role="navigation" className="navbar navbar-default">
               <div className="">
                 <div className="navbar-header">
