@@ -9,3 +9,6 @@ keyStore.js
 # Debuggers
 .vscode
 index.js
+
+#debug log
+npm-debug.log
