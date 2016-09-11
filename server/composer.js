@@ -9,7 +9,9 @@ var db = require('./controllers/util/dbController.js');
 function update(username, field){
   return new Promise(resolve, reject){
     db.getLogin(username, field).then((login)=>{
-      externals[field].updateScore(login);
+      externals[field].updateScore(login).then((score)=>{
+        db.setScore(username, field, score);
+      });
     });
   }
 }
