@@ -19,3 +19,5 @@ api.analyseSentiment = function(str, cb){
 
   });
 };
+
+module.exports = api;
