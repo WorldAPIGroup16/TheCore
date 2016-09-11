@@ -1,6 +1,7 @@
 var request = require('request');
 var api = require('../keyStore.js');
 var graph = require('fbgraph');
+var FB =  require('fb'), fb = new FB.Facebook({appId: api.facebook.key, appSecret: api.facebook.secret});
 
 /* Helper Requests go here */
 module.exports = {
@@ -8,25 +9,28 @@ module.exports = {
   getFacebookPosts: function(user, res){
     console.log('Inside getFacebookPosts');
 
-    graph.setAccessToken(184780581946920);
+    graph.setAccessToken(api.facebook.key);
+    graph.setAppSecret(api.facebook.secret);
 
     // get authorization url 
     var authUrl = graph.getOauthUrl({
-        "client_id":     api.key
-      , "redirect_uri":  api.redirect_uri
+        "client_id":     api.facebook.key
+      , "redirect_uri":  api.facebook.redirect_uri
     });
  
     // shows dialog 
-    //res.redirect(authUrl);
+    res.redirect(authUrl);
  
     // after user click, auth `code` will be set 
     // we'll send that and get the access token 
     graph.authorize({
-        "client_id":      api.key
-      , "redirect_uri":   api.redirect_uri
-      , "client_secret":  api.secret
+        "client_id":      api.facebook.key
+      , "redirect_uri":   api.facebook.redirect_uri
+      , "client_secret":  api.facebook.secret
+      // , "code":           req.query.code
     }, function (err, facebookRes) {
-      res.redirect('/loggedIn');
+      // res.redirect('/loggedIn');
+
     });
 
     var options = {
@@ -38,14 +42,14 @@ module.exports = {
     graph
       .setOptions(options)
       .get("zuck", function(err, res) {
-        console.log(res); // { id: '4', name: 'Mark Zuckerberg'... } 
+        console.log('Data Payload! ', res); // { id: '4', name: 'Mark Zuckerberg'... } 
 
         // res.send('End Response');
     });
 
     res.send('End Response');
 
-    // request('https://graph.facebook.com/alex.paczynski.3?access_token=184780581946920', function(error, response, body){
+    // request('https://graph.facebook.com/zuck?access_token=184780581946920', function(error, response, body){
     //   if(error){
     //     console.log('Error: ', error);
     //   }
@@ -76,6 +80,7 @@ module.exports = {
     //   console.log('res.name: ', res.name);
     // });
 
+    // res.send('End Response');
   }
 
 };
