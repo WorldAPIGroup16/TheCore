@@ -1,12 +1,15 @@
+var haven = require('./../util/havenController.js');
+// var db = require('')
 var api = {};
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-    // private function getTwitterPosts.then((posts)=>{
-    //   haven.calculateSentiment(posts).then((sentiment)=>{
-          //db.set(sentiment);
-    // })
-    // });
+    getTwitterPosts().then((tweets) => {
+      haven.analyzeSentiment(tweets).then((sentiment)=>{
+        resolve(sentiment);
+        // db.set(sentiment);
+      })
+    })
   });
 };
 
@@ -19,9 +22,33 @@ api.getScore = function(user){
 
 //private function
 function getTwitterPosts(username){
-  return new Promise((resolve, reject)=>{
-    //get the twitter posts and
-    //resolve(posts);
+  var client = new Twitter({
+    consumer_key: keys.twitter.consumer_key,
+    consumer_secret: keys.twitter.consumer_secret,
+    access_token_key: keys.twitter.access_token_key,
+    access_token_secret: keys.twitter.access_token_secret
+  });
+  
+  //TODO: replace hard-coded username with user-input
+  var params = {
+    screen_name: 'legendxry7',
+    count: 200
+  };
+
+  return new Promise(function(resolve, reject) {
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+      if (error) {
+        reject(error);
+      }
+
+      var concatenatedTweets = '';
+
+      tweets.forEach(function(tweetObj, key) {
+        concatenatedTweets += tweetObj.text + ' ';
+      });
+
+      resolve(concatenatedTweets);
+    });
   });
 }
 
