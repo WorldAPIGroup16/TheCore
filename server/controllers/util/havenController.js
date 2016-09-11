@@ -14,7 +14,7 @@ api.analyseSentiment = function(str){
       if(error){
         reject(error);
       }
-      resolve(body);
+      resolve(body.aggregate.score);
     });
 
   });
