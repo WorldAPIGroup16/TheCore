@@ -1,10 +1,30 @@
+.test {
+  border: 1px solid black;
+  background: rgba(255,255, 255, 0.9);
+  //height:600px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-top: 100px;
+
+}
 .score-data {
   margin-top: 40px;
 }
 .site-header{
   height: 10vh;
 }
+
+.buttonLogin {
+  color: black !important;
+}
+
+.buttonLogin:hover {
+  color: seagreen !important;
+}
+
 .jumbotron {
+    font-family: 'Baloo Tamma', cursive;
+    //font-family: 'Libre Franklin', cursive;
     height: 90vh;
     width: 100vw;
     background-image: url('../Traffic-blurred2.jpg') !important;
@@ -20,7 +40,6 @@
   background-color: rgba(0,0,0, 0.5);
   padding-top: 20px; 
   padding-bottom: 60px;
-
 }
 
 .user-name { 
@@ -61,7 +80,10 @@
   margin-right: 15px;
 }
 
-
+.nav {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
 
 
 
@@ -112,13 +134,15 @@
 }
 
 .section {
-    height: 900px;
+  height: 900px;
 }
 .section1-content {
   background: rgba(255,255, 255, 0.9);
-  height:600px;
+  //height:600px;
   padding-top: 30px;
-  margin-top: 20%;
+  padding-bottom: 20px;
+  margin-top: 100px;
+  border: 1px solid black;
 }
 .section1-content h3 {
   margin:0px 30px;
