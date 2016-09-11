@@ -37,6 +37,7 @@
     "redux": "^3.0.4",
     "request": "^2.74.0",
     "traitify": "^2.2.0",
+    "twitter": "^1.4.0",
     "webpack-hot-middleware": "^2.12.2"
   }
 }
