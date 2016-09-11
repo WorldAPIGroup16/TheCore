@@ -1,18 +1,23 @@
 var request = require('request');
+var key = require('../../../keyStore.js').haven.key;
 
 var api = {};
 
-api.analyseSentiment = function(str, cb){
-  var key = PROCESS.ENV.haven;
-  var options = {
-    method: 'GET',
-    url: `	https://api.havenondemand.com/1/api/sync/analyzesentiment/v1?apikey=${key}&text=${str}`
-  };
+api.analyseSentiment = function(str){
+  return new Promise((resolve, reject)=>{
+    var options = {
+      method: 'GET',
+      url: `https://api.havenondemand.com/1/api/sync/analyzesentiment/v1?apikey=${key}&text=${str}`
+    };
 
-  request(options, (error, response, body)=>{
-    if(error){
+    request(options, (error, response, body)=>{
+      if(error){
+        reject(error);
+      }
+      resolve(body);
+    });
 
-    }
-    cb(body);
   });
 };
+
+module.exports = api;
