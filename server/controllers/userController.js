@@ -1,4 +1,5 @@
 var request = require('request');
+var scoreHelpers = require('./scoreHelpers');
 
 module.exports = {
   register: function(req, res){
@@ -11,9 +12,8 @@ module.exports = {
   },
 
   getScore: function(req, res){
-
-
-    res.send('got get request for users score');
+    scoreHelpers.twitter().then(tweets => {
+      res.status(200).send(tweets);
+    })
   }
-
 };
