@@ -7,6 +7,11 @@
   margin-top: 100px;
 
 }
+
+.coreLogo {
+  //width: 20% !important;
+}
+
 .score-data {
   margin-top: 40px;
 }
@@ -82,7 +87,7 @@
 
 .nav {
   margin-top: -30px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 
