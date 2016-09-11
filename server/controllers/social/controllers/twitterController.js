@@ -1,7 +1,7 @@
 var haven = require('./../../util/havenController.js');
 var Twitter = require('twitter');
 var keys = require('./../../../../keyStore.js');
-// var db = require('')
+var db = require('./../../util/dbController.js');
 var api = {};
 
 api.updateScore = function(user){
@@ -17,8 +17,9 @@ api.updateScore = function(user){
 
 api.getScore = function(user){
   return new Promise((resolve, reject)=>{
-    //db.getScore.then
-    //resolve(gottenScore);
+    db.getScore(user, 'twitter').then((score)=>{
+      resolve(score);
+    });
   });
 };
 

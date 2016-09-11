@@ -3,7 +3,7 @@ var twitter = require('./controllers/twitterController.js');
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-   twitter.getScore.then((score)=>{
+   twitter.getScore(user).then((score)=>{
      resolve(score);
    });
   });
