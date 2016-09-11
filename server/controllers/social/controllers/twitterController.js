@@ -33,7 +33,7 @@ function getTwitterPosts(username){
   
   //TODO: replace hard-coded username with user-input
   var params = {
-    screen_name: 'legendxry7',
+    screen_name: username,
     count: 200
   };
 
