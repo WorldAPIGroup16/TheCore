@@ -60,11 +60,12 @@ api.getLogin = function(username, field){
 };
 
 api.setScore = function(username, field, score){
-   if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+  var branch;
+  if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
+    branch = 'social'
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   return new Promise((resolve, reject)=>{
     //for the given user
