@@ -10,10 +10,13 @@ export default class TraitifyContainer extends Component {
       var assessmentId = "67d67284-f37d-4a0e-b1b8-fc99c98b3d3a";
       Traitify.ui.load(assessmentId, ".assessment")
   }
+  
   render() {
     return (
-      <div className="traitify-container col-sm-4">
-        <div className="assessment"></div>
+      <div className="traitify-container col-xs-12 col-md-4">
+        <article className="card-docs">
+          <div className="assessment"></div>
+        </article>
       </div>
     );
   }

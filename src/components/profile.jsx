@@ -15,10 +15,10 @@ export default class SignUp extends Component {
         <CoreScore />
       </div>
         <div className="row test">
-          <TraitifyContainer />
-          <ECommerceContainer />
-          <SocialMediaContainer />
-        </div>
+            <TraitifyContainer />
+            <ECommerceContainer />
+            <SocialMediaContainer />
+          </div>
       </div>
     );
   }
