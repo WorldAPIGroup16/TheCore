@@ -38,11 +38,12 @@ api.getUser = function(username){
 };
 
 api.getLogin = function(username, field){
-  if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+  var branch;
+  if (field == 'facebook' || field == 'twitter') {
+    branch = 'social'
   }
   else {
-    let branch = 'market';
+    branch = 'market';
   }
   //get the "login name" for whatever field, ie user.market.ebay.name or user.social.facebook.name
   //resolve over that name string
