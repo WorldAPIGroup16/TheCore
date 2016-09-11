@@ -1,4 +1,7 @@
 # Dependency directories
 node_modules/
 bower_components/
-dist/
+dist/bundle.js
+
+# Access Tokens/Secrets
+keyStore.js
