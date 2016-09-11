@@ -40,7 +40,7 @@ api.getUser = function(username){
 api.getLogin = function(username, field){
   var branch;
   if (field == 'facebook' || field == 'twitter') {
-    branch = 'social'
+    branch = 'social';
   }
   else {
     branch = 'market';
@@ -51,10 +51,11 @@ api.getLogin = function(username, field){
     database.ref('/Users/' + username + '/' + branch + '/' + field + '/name').once('value').then((snapshot)=>{
       if (snapshot) {
         resolve(snapshot.val());
-        return;
       }
-      reject('Invalid snapshot');
-    })
+      else {
+        reject('Invalid snapshot');
+      }
+    });
   });
 };
 

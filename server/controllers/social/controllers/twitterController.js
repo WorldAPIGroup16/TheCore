@@ -6,7 +6,7 @@ var api = {};
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-    getTwitterPosts().then((tweets) => {
+    getTwitterPosts(user).then((tweets) => {
       haven.analyseSentiment(tweets).then((sentiment)=>{
         resolve(sentiment.aggregate.score);
         // db.set(sentiment);
