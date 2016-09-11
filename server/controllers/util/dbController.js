@@ -21,7 +21,7 @@ api.getUserTraitify = function(username){
       }
       reject('Invalid snapshot');
     });
-  })
+  });
 };
 
 api.getUser = function(username){
@@ -75,7 +75,7 @@ api.setScore = function(username, field, score){
 
 api.getScore = function(username, field){
   if (field == 'facebook' || field == 'reddit' || field == 'twitter') {
-    let branch = 'social'
+    let branch = 'social';
   }
   else {
     let branch = 'market';
