@@ -2,7 +2,7 @@ var api = {};
 
 api.updateScore = function(user){
   return new Promise((resolve, reject)=>{
-    // market.getScore.then((score)=>{
+    // facebook.getScore.then((score)=>{
     //   //
     // });
     //chain off facebook  and twitter and then 
