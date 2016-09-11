@@ -21,10 +21,27 @@ api.getScore = function(user){
 };
 
 //private function
-function getRedditScore(username){
+function getRedditKarma(username){
   return new Promise((resolve, reject)=>{
-    //get the ebay score  and
-    //resolve(score);
+    var options = {
+      url: `http://www.reddit.com/user/${username}/about.json`,
+      method: 'GET'
+    };
+    request(options, (err, response, body)=>{
+      resolve(body.data.link_karma);
+    });
+  });
+}
+
+function getRedditNumPosts(username){
+  return new Promise((resolve, reject) => {
+    var options = {
+      url: `http://www.reddit.com/user/${username}/submitted.json`,
+      method: 'GET'
+    };
+    request(options, (err, response, body) => {
+      resolve(body.data.link_karma);
+    });
   });
 }
 
