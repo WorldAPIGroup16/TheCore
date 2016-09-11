@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import UserSearch from '../components/user_search.jsx';
 import SignUp from '../components/sign_up.jsx';
-
+import Header from '../components/header.jsx';
+import Footer from '../components/footer.jsx';
+import Jumbotron from '../components/jumbotron.jsx';
 export default class Home extends Component {
 
   render() {
     return (
-      <div>
-      <div className="jumbotron">
-        <h3>THE CORE</h3>
-        <h5>Get your Core Score</h5>
-      </div>
-        <UserSearch />
-        <SignUp />
-      </div>
+        <div>
+          <Header />
+          <Jumbotron />
+          <UserSearch />
+          <SignUp />
+          <Footer />
+        </div>
     );
   }
 }

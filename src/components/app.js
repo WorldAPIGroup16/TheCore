@@ -8,8 +8,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='app container'>
-        <Profile />
+      <div className='app'>
+        <Home />
       </div>
     );
   }
