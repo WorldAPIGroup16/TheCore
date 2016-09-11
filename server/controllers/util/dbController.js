@@ -7,6 +7,13 @@ api.getUser = function(username){
   });
 };
 
+api.getLogin = function(username, field){
+  return new Promise((resolve, reject)=>{
+    //get the "login name" for whatever field, ie user.market.ebay.name or user.social.facebook.name
+    //resolve over that name string
+  });
+}
+
 api.setScore = function(username, field, score){
   return new Promise((resolve, reject)=>{
     //for the given user
