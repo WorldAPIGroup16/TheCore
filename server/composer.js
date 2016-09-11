@@ -7,22 +7,26 @@ var db = require('./controllers/util/dbController.js');
 
 
 function update(username, field){
-  return new Promise(resolve, reject){
+  return new Promise((resolve, reject)=>{
     db.getLogin(username, field).then((login)=>{
       externals[field].updateScore(login).then((score)=>{
         db.setScore(username, field, score);
         resolve();
       });
     });
-  }
+  });
 }
 
-update('Caleb', 'twitter').then(()=>{
-  update('Caleb', 'reddit').then(()=>{
-    update('Caleb', 'market').then(()=>{
-      update('Caleb', 'social').then(()=>{
-        console.log('all updated!');
+module.exports = {
+  update: function(){
+    update('Caleb', 'twitter').then(()=>{
+      update('Caleb', 'reddit').then(()=>{
+        update('Caleb', 'market').then(()=>{
+          update('Caleb', 'social').then(()=>{
+            console.log('all updated!');
+          });
+        });
       });
-    });
-  });
-});;
+    });;
+  }
+}
