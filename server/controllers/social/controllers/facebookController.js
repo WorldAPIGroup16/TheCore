@@ -26,4 +26,4 @@ function getFacebookPosts(username){
 }
 
 
-return api;
+module.exports =  api;

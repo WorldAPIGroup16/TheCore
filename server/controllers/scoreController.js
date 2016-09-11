@@ -17,4 +17,4 @@ api.getScore = function(user){
   });
 };
 
-return api;
+module.exports =  api;

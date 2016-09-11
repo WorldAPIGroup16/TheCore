@@ -26,4 +26,4 @@ function getTwitterPosts(username){
 }
 
 
-return api;
+module.exports =  api;

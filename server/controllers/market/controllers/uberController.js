@@ -27,4 +27,4 @@ function getEbayScore(username){
 }
 
 
-return api;
+module.exports =  api;
